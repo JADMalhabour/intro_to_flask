@@ -1,0 +1,27 @@
+{% include "header.html" %}
+  <h1>Past Orders</h1>
+  {% if counter1 > 0 %}
+  <table>
+    <tr>
+      <th width="100px">Code</th>
+      <th width="150px">Name</th>
+      <th width="100px">Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+      {% for info in pastorders %}
+        <tr>
+          <td>{{ info["code"] }}</td>
+          <td>{{ info["name"] }}</td>
+          <td>{{ info["qty"] }}</td>
+          <td>{{ info["subtotal"] }}</td>
+        </tr>
+        {% endfor %}
+  </table>
+  {% else %}
+    <div>You have not made any orders yet.</div>
+  {% endif %}
+
+
+{% include "footer.html" %}
+
+}
